@@ -38,7 +38,7 @@ const SignUp = () => {
         <div className="hero min-h-screen bg-base-200 lg:max-w-screen-lg mx-auto">
             <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent">Sign Up With Google</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-primary btn-wide">Sign Up With Google</button>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSignUp} className="card-body">

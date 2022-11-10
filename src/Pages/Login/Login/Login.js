@@ -25,7 +25,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200 lg:max-w-screen-lg mx-auto">
             <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                <button className="btn btn-outline btn-accent">Login With Google</button>
+                <button className="btn  btn-primary btn-wide">Login With Google</button>
 
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
