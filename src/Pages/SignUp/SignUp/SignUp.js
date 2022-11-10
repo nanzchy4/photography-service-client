@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const SignUp = () => {
-
+    useTitle('SignUp');
     const {createUser, signUpWithGoogle} = useContext(AuthContext)
     const handleSignUp = (event) =>{
         event.preventDefault();
