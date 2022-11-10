@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
 import Services from './Pages/AllServices/Services/Services';
+import Blog from './Pages/Blog/Blog/Blog';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import SingleService from './Pages/ServiceDetails/SingleService/SingleService';
@@ -37,6 +38,10 @@ function App() {
         {
           path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         }
       ]
     }

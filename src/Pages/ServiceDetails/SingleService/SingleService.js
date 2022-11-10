@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import OtherReviews from '../OtherReviews/OtherReviews/OtherReviews';
+import ReviewEntry from '../OtherReviews/ReviewEntry';
 import Review from '../Review/Review';
 
 const SingleService = () => {
@@ -21,6 +23,7 @@ const SingleService = () => {
             </div>
         </div>
         <Review key={_id} serviceId={_id} serviceName={title} ></Review>
+        <OtherReviews></OtherReviews>
        </div>
     );
 };
