@@ -23,6 +23,22 @@ const Review = ({serviceId, serviceName}) => {
             user : name,
             email, photo, comment
         }
+        fetch('http://localhost:5000/reviews',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.acknowledged){
+                alert("Review Added. Thank You!")
+                form.reset();
+            }
+        })
+        .catch(err => console.log(err));
      }
     return (
        <form onSubmit={handleReview} className='lg:max-w-screen-lg mx-auto'>
