@@ -1,40 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ReviewEntry from '../ReviewEntry';
 
 const OtherReviews = () => {
-    return (
-        <div className="overflow-x-auto w-full">
-            <table className="table w-full">
-                
-                <thead>
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                   
-                </tbody>
-               
-                <tfoot>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
-                        <th></th>
-                    </tr>
-                </tfoot>
 
-            </table>
-        </div>
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setReviews(data)
+            })
+    }, [])
+
+    return (
+
+            <div className='grid grid-cols-3 lg:max-w-screen-lg mx-auto'>
+            {
+                        reviews.map(review => <ReviewEntry key={review._id} review={review}></ReviewEntry>)
+                    } 
+            </div>                   
+               
     );
 };
 
