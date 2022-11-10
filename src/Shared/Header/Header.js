@@ -24,7 +24,11 @@ const Header = () => {
                         <li><Link to='/blog'>Blog</Link></li>
                         {
                         user?.uid ? 
+                        <>
+                        <li><Link to='/myReview'>My Reviews</Link></li>
                         <li><button onClick={handleLogOut} className="btn btn-outline btn-secondary">Logout</button></li>
+
+                        </>
                         :
                         <>
                         <li><Link to='/login'>Login</Link></li>
@@ -43,7 +47,11 @@ const Header = () => {
                     <li><Link to='/blog'>Blog</Link></li>
                     {
                         user?.uid ? 
+                        <>
+                        <li><Link to='/myReview'>My Reviews</Link></li>
                         <li><button onClick={handleLogOut} className="btn btn-outline btn-secondary">Logout</button></li>
+
+                        </>
                         :
                         <>
                         <li><Link to='/login'>Login</Link></li>

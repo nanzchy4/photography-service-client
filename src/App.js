@@ -5,6 +5,7 @@ import Services from './Pages/AllServices/Services/Services';
 import Blog from './Pages/Blog/Blog/Blog';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
+import MyReviews from './Pages/MyReviews/MyReviews';
 import SingleService from './Pages/ServiceDetails/SingleService/SingleService';
 import SignUp from './Pages/SignUp/SignUp/SignUp';
 
@@ -42,6 +43,10 @@ function App() {
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '/myReview',
+          element: <MyReviews></MyReviews>
         }
       ]
     }

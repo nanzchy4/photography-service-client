@@ -45,7 +45,7 @@ const Review = ({ serviceId, serviceName }) => {
         <div>
             {
                 user?.uid ?
-                    <form onSubmit={handleReview} className='lg:max-w-screen-lg mx-auto'>
+                    <form onSubmit={handleReview} className='lg:max-w-screen-lg mx-auto mb-16'>
                         <h2 className='text-3xl text-center mb-8'>Add a review for <span className='font-bold text-4xl text-blue-800 '>"{serviceName}"</span></h2>
                         <div className='flex flex-col gap-3 text-center'>
                             <input name='name' type="text" placeholder="Your name" className="font-semibold input input-bordered input-primary w-full max-w-sm" />
