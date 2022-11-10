@@ -3,6 +3,8 @@ import './App.css';
 import Main from './Layout/Main';
 import Services from './Pages/AllServices/Services/Services';
 import Home from './Pages/Home/Home/Home';
+import Login from './Pages/Login/Login/Login';
+import SingleService from './Pages/ServiceDetails/SingleService/SingleService';
 
 function App() {
 
@@ -19,14 +21,18 @@ function App() {
         {
           path: '/services',
           element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('http://localhost:5000/allservices')
 
+        },
+        {
+          path: '/allservices/:id',
+          element: <SingleService></SingleService>,
+          loader: ({params}) => fetch(`http://localhost:5000/allservices/${params.id}`)
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
         }
-        // {
-        //   path: '/',
-        //   element: <ServicesArea></ServicesArea>,
-        //   loader: () => fetch('http://localhost:5000/services')
-        // }
       ]
     }
   ])
