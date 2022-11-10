@@ -5,6 +5,7 @@ import Services from './Pages/AllServices/Services/Services';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import SingleService from './Pages/ServiceDetails/SingleService/SingleService';
+import SignUp from './Pages/SignUp/SignUp/SignUp';
 
 function App() {
 
@@ -32,6 +33,10 @@ function App() {
         {
           path: '/login',
           element: <Login></Login>
+        },
+        {
+          path: '/signup',
+          element: <SignUp></SignUp>
         }
       ]
     }

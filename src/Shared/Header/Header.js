@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(()=>{})
+        .catch(error => console.error(console.error))
+    }
+
     return (
         <div className="navbar bg-base-100 lg:max-w-screen-lg mx-auto mt-4 mb-8 bg-rose-100	">
             <div className="navbar-start">
@@ -12,7 +21,16 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/services'>Services</Link></li>
+                        {
+                        user?.uid ? 
+                        <li><button onClick={handleLogOut} className="btn btn-outline btn-secondary">Logout</button></li>
+                        :
+                        <>
                         <li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/signup'>Sign Up</Link></li>
+                        </>
+                    }   
+                        
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">Moment Capture</a>
@@ -21,7 +39,16 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/services'>Services</Link></li>
-                    <li><Link to='/login'>Login</Link></li>                </ul>
+                    {
+                        user?.uid ? 
+                        <li><button onClick={handleLogOut} className="btn btn-outline btn-secondary">Logout</button></li>
+                        :
+                        <>
+                        <li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/signup'>Sign Up</Link></li>
+                        </>
+                    }   
+               </ul>
             </div>
             <div className="navbar-end">
                 <a className="btn">Get started</a>
