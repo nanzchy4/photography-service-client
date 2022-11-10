@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
-import ServicesArea from './Pages/Home/ServicesArea/ServicesArea';
+import Services from './Pages/AllServices/Services/Services';
+import Home from './Pages/Home/Home/Home';
 
 function App() {
 
@@ -12,9 +13,20 @@ function App() {
       children: [
         {
           path: '/',
-          element: <ServicesArea></ServicesArea>,
+          element: <Home></Home>,
+          
+        },
+        {
+          path: '/services',
+          element: <Services></Services>,
           loader: () => fetch('http://localhost:5000/services')
+
         }
+        // {
+        //   path: '/',
+        //   element: <ServicesArea></ServicesArea>,
+        //   loader: () => fetch('http://localhost:5000/services')
+        // }
       ]
     }
   ])
